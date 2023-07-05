@@ -13,6 +13,7 @@ function Header() {
     const user = useSelector((state)=> state.user)
 
     const handleLogout = () => {
+        
         dispatch(logout())
         navigate("/");
     };
