@@ -62,7 +62,7 @@ export default function LoginForm() {
                 <p>{errors.password?.message}</p>
             </>
 
-            <input className="submitBtn" type="submit" value="Submit" onClick={handleClick}/>
+            <input className="submitBtn" type="submit" value="Submit" />
         </form>
     )
 }
