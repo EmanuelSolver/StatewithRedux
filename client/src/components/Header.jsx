@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom"
 import { FaHome, FaInfoCircle, FaBook, FaSignOutAlt } from "react-icons/fa"
 import './header.css'
-import { useContext } from 'react'
-import { Context } from "../context/userContext/Context";
+
 import { useNavigate } from "react-router-dom";
+import { logout } from "../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+
 function Header() {
-    const { user, dispatch } = useContext(Context);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const user = useSelector((state)=> state.user)
+
     const handleLogout = () => {
-        dispatch({ type: "LOGOUT" });
+        dispatch(logout())
         navigate("/");
     };
     return (

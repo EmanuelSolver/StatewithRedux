@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import './loginform.css'
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
@@ -14,9 +13,6 @@ import { useDispatch } from "react-redux";
 
 export default function LoginForm() {
     const dispatch = useDispatch();
-    // const [username, setName] = useState('');
-    // const [token, setToken] = useState('');
-
 
     const navigate = useNavigate();
     const schema = yup.object().shape({
@@ -42,13 +38,6 @@ export default function LoginForm() {
                 alert(response?.data.error)
             });
     };
-
-    // const handleClick = async (e) => {
-    //     e.preventDefault();
-    //     // without API
-    //     // dispatch(login({username, token}));
-      
-    //   }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="Form" >
