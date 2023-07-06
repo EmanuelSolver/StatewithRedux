@@ -1,20 +1,22 @@
-import { useContext } from 'react'
 import './sidenav.css'
 import { FaUserTie } from 'react-icons/fa'
 import { AiFillFileAdd } from 'react-icons/ai'
 import { TfiViewListAlt } from 'react-icons/tfi'
-import { Context } from "../context/todoContext/Context";
+//using Redux
+import { profile, addTodo, viewTodo } from "../redux/NavigationSlice";
+import { useDispatch } from "react-redux";
 
 export default function Sidenav() {
-    const { dispatch } = useContext(Context);
+   const dispatch = useDispatch()
+
     const handleAdd = () => {
-        dispatch({ type: "ADD", payload: 'add' })
+        dispatch(addTodo({bar:'addTodo'}));
     }
     const handleView = () => {
-        dispatch({ type: "ADD", payload: 'view' })
+        dispatch(viewTodo({bar:'viewTodo'}));
     }
     const handleProfile = () => {
-        dispatch({ type: "PROFILE", payload: 'profile' })
+        dispatch(profile({bar:'profile'}));
     }
     return (
         <div className='sidenav'>

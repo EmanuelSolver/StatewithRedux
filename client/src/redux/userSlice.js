@@ -6,18 +6,20 @@ export const userSlice = createSlice({
 
     initialState: storedUser || {
         userName: null,
+        email: null,
+        id: null,
         userToken: null,
     },
     reducers: {
         login: (state, action) => {  
-            const {username, token} = action.payload
+            const {username, email, id, token} = action.payload
             state.userName = username;
+            state.email = email,
+            state.id = id,
             state.userToken = token;
             localStorage.setItem('user', JSON.stringify(state))
         },
-        logout: (state) => {
-            state.userName = null;
-            state.userToken = null;
+        logout: () => {
             localStorage.removeItem('user')
         },  
     }

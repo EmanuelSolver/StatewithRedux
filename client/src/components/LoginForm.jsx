@@ -30,7 +30,7 @@ export default function LoginForm() {
             .then(({ data }) => {
                 if (data.token) {
 
-                    dispatch(login({username: data.username, token: data.token}));
+                    dispatch(login({username: data.username, email: data.email, id: data.id, token: data.token}));
                     navigate("/todos")
                 }
             }).catch(({ response }) => {

@@ -1,25 +1,28 @@
 import './mainnav.css'
-import { useContext } from 'react'
-import { Context } from '../context/todoContext/Context'
 import Profile from './Profile';
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
+
+//using Redux
+import { useSelector } from "react-redux";
+
 export default function Mainnav() {
-    const { ui } = useContext(Context);
+    const bar = useSelector((state) => state.sidebar.bar.bar);
+
     return (
         <div className='mainnav'>
             {
-                ui == 'add' ? (
+                bar == 'addTodo' ? (
                     <div className="mainnav_wrapper">
                         <h2>Add Todos</h2>
                         <AddTodo />
                     </div>
-                ) : ui == 'view' ? (
+                ) : bar == 'viewTodo' ? (
                     <div className="mainnav_wrapper" >
                         <h2>View All Todos</h2>
                         <TodoList />
                     </div>
-                ) : ui == 'profile' ? (
+                ) : bar == 'profile' ? (
                     <div className="mainnav_wrapper">
                         <h2>User Profile</h2>
                         <Profile />
