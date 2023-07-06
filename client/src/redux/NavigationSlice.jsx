@@ -10,15 +10,15 @@ export const navigationSlice = createSlice({
     reducers: {
         profile: (state, action) => {  
             state.bar = action.payload;
-            localStorage.setItem('sidebar', JSON.stringify(state))
+            localStorage.setItem('sidebar', JSON.stringify(state.bar))
         },
         addTodo: (state, action) => {  
             state.bar = action.payload;
-            localStorage.setItem('sidebar', JSON.stringify(state))
+            localStorage.setItem('sidebar', JSON.stringify(state.bar))
         },
         viewTodo: (state, action) => {  
             state.bar = action.payload;
-            localStorage.setItem('sidebar', JSON.stringify(state))
+            localStorage.setItem('sidebar', JSON.stringify(state.bar))
         }
      
     }
