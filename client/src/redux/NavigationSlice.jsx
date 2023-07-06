@@ -4,7 +4,7 @@ export const navigationSlice = createSlice({
     name: "sidebar",
 
     initialState: {
-        bar: null,
+        bar: '',
 
     },
     reducers: {
