@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const navigate = JSON.parse(localStorage.getItem('sidebar'))
 export const navigationSlice = createSlice({
     name: "sidebar",
 
     initialState: {
-        bar: 'profile',
+        bar: null,
 
     },
     reducers: {
